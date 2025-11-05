@@ -16,7 +16,7 @@
 					</a>
 					<a href="https://t.me/montee7990" target="_blank" class="contact__social-btn">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/telegramm.svg" alt="telegramm" class="contact__social-icon">
-						<p class="contact__social-content" contenteditable="false">Написать в Telegramm</p>
+						<p class="contact__social-content" contenteditable="false">Написать в Telegram</p>
 					</a>
 				</div>
 			</div>

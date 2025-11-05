@@ -1,0 +1,164 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 190px 0 125px 0;
+  background: url(../img/bg-shadow-up.webp) top 0 left 0/cover no-repeat;
+  z-index: 1
+}
+.hero__img-bg {
+  position: absolute;
+  z-index: -1
+}
+.hero__img-bg--cube {
+  width: 480px;
+  left: -50px;
+  bottom: 55px
+}
+.hero__img-bg--crane {
+  right: 0;
+  bottom: 0;
+  width: 680px
+}
+
+.title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 34px;
+  color: var(--emperor)
+}
+
+.hero__title {
+  max-width: 640px
+}
+.hero__title span {
+  font-size: 18px;
+  color: #fff;
+  padding: 8px 15px;
+  background-color: var(--green);
+  border-radius: 10px
+}
+.hero__advantages {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  row-gap: 25px
+}
+.hero__advantages-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 250px
+}
+.hero__advantages-icon {
+  height: auto
+}
+.hero__advantages-content {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%
+}
+.hero__advantages-content span {
+  font-weight: 700;
+  font-size: 20px
+}
+.hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  gap: 20px
+}
+.hero__btn-lift {
+  padding-left: 50px;
+  padding-right: 50px;
+  box-shadow: 4px 4px 0 0 var(--green-black)
+}
+.hero__btn-lift:focus {
+  -webkit-transform: translate(4px,4px);
+  transform: translate(4px,4px);
+  box-shadow: none
+}
+
+@media (max-width:1439px) {
+  .hero__img-bg--crane {
+    width: 610px;
+    right: -100px
+  }
+}
+@media (max-width:1199px) {
+  .hero {
+    padding-top: 150px
+  }
+  .hero__advantages {
+    max-width: 780px
+  }
+}
+@media (max-width:992px) {
+  .hero__img-bg--crane {
+    right: -320px
+  }
+}
+
+@media (max-width:767px) {
+  .title {
+    font-size: 20px;
+  }
+  .hero {
+    padding: 125px 0 60px 0
+  }
+  .hero__img-bg--cube {
+    display: none
+  }
+  .hero__img-bg--crane {
+    width: 480px;
+    right: -250px
+  }
+  .hero__title {
+    max-width: 400px
+  }
+  .hero__title span {
+    font-size: inherit;
+    padding: 0;
+    color: var(--green);
+    background: 0 0
+  }
+  .hero__advantages {
+    max-width: 580px
+  }
+  .hero__advantages-item {
+    max-width: 215px
+  }
+  .hero__advantages-content {
+    font-size: 14px
+  }
+  .hero__advantages-content span {
+    font-size: inherit
+  }
+  .hero__buttons {
+    flex-direction: column;
+    margin-top: 40px
+  }
+  .hero__buttons .btn {
+    max-width: 250px;
+    width: 100%
+  }
+  .hero__btn-lift {
+    padding: 15px
+  } 
+}
+
+@media (any-hover:hover) {
+   .hero__btn-lift:hover {
+    cursor: pointer
+  }
+  .btn.btn-stroke:hover {
+    background-color: var(--green);
+    color: #fff
+  }
+  .btn.btn-dashed:hover {
+    background-color: var(--green);
+    color: #fff
+  }
+}

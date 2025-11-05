@@ -1,0 +1,145 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
+  z-index: 100
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.header__messenegers {
+  display: flex;
+  align-items: center;
+  gap: 18px
+}
+.header__messenegers-buttons {
+  display: flex;
+  gap: 6px
+}
+.header__messenegers-btn {
+  width: 38px;
+  height: 38px;
+  transition: -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease,-webkit-transform .2s ease
+}
+.header__messenegers-icon {
+  width: 100%;
+  height: 100%
+}
+.header__messenegers-content {
+  margin: 0;
+  max-width: 95px;
+  font-weight: 500;
+  font-size: 12px
+}
+.header__hours-work {
+  margin: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  max-width: 130px;
+  font-weight: 500;
+  font-size: 12px
+}
+.header__hours-work::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--green-bright)
+}
+.header__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: end
+}
+.header__contact-tel {
+  font-size: 25px;
+  transition: color .2s ease
+}
+.header__contact-mail {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  font-size: 16px;
+  transition: color .2s ease
+}
+.header__call {
+  text-transform: none!important;
+  padding: 14px 24px
+}
+
+@media (max-width:1199px) {
+    .header__logo {
+        width: 140px
+    }
+}
+
+@media (max-width:992px) {
+    .header__messenegers-content {
+        display: none
+    }
+    .header__hours-work {
+        display: none
+    }
+}
+
+@media (max-width:767px) {
+    .header__logo {
+        width: 100px
+    }
+    .header__messenegers {
+        order: 2
+    }
+    .header__messenegers-btn {
+        width: 30px;
+        height: 30px
+    }
+    .header__contact {
+        order: 1
+    }
+    .header__contact-tel {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--emperor)
+    }
+
+    .header__call,.header__contact-mail {
+        display: none!important;
+    }
+}
+
+@media (max-width:479px) {
+  .header {
+    padding: 10px 0
+  }
+}
+
+@media (max-width:429px) {
+    .header__contact-tel {
+        font-size: 14px
+    }
+}
+
+@media (any-hover:hover){
+    .header__messenegers-btn:hover {
+        -webkit-transform: rotate(45deg) scale(1.2);
+        transform: rotate(45deg) scale(1.2)
+    }
+    .header__contact-tel:hover {
+        color: var(--green-bright)
+    }
+    .header__contact-mail:hover {
+        color: var(--green-bright)
+    }
+}
+

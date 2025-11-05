@@ -117,7 +117,7 @@ get_header();
 													                                                                                    echo get_the_post_thumbnail( get_the_ID(), 'shop_catalog', array( 'class' => 'catalog__img' ) );
 													                                                                                } else {
 													                                                                                    echo '<img src="' . get_template_directory_uri() . '/assets/img/photo.jpg" alt="No Photo" class="catalog__img">';
-													                                                                                }													echo '<h5 class="title catalog__item-title">' . get_the_title() . '</h5>';
+													                                                                                }													echo '<h5 class="title catalog__item-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h5>';
 																							$attributes = $product->get_attributes();
 																							if ( ! empty( $attributes ) ) {
 																								echo '<ul class="list catalog__specifications">';

@@ -1,0 +1,128 @@
+.answers {
+  position: relative;
+  padding: 165px 0;
+  z-index: 1
+}
+.answers__lift {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  width: 400px;
+  height: auto;
+  right: 120px;
+  bottom: 100px
+}
+.answers__bg {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.answers__title {
+  max-width: 480px
+}
+.answers__info {
+  margin-top: 70px;
+  max-width: 765px
+}
+.answers__spoller:not(:first-child) {
+  margin-top: 30px
+}
+.answers__btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  -webkit-text-fill-color: #000;
+  cursor: pointer;
+}
+.answers__btn::after,
+.answers__btn::before {
+  position: absolute;
+  content: "";
+  background-color: #000;
+  transition: -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease,-webkit-transform .2s ease
+}
+.answers__btn::before {
+  width: 20px;
+  height: 2px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.answers__btn::after {
+  height: 20px;
+  width: 2px;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+details[open] .answers__btn::after {
+  width: 0;
+}
+.answers__info-content {
+  padding-top: 20px;
+  margin: 0 0 0 auto;
+  max-width: calc(100% - 80px)
+}
+
+.answers__spoller {
+    margin-bottom: 10px;
+}
+
+details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+    0%    {opacity: 0; transform: translateY(-10px)}
+    100%  {opacity: 1; transform: translateY(0)}
+}
+
+@media (max-width:1439px) {
+    .answers__lift {
+    width: 350px;
+    right: 80px
+  }
+}
+
+@media (max-width:1199px) {
+    .answers__lift {
+    width: 215px;
+    right: 0
+  }
+}
+
+@media (max-width:992px) {
+    .answers {
+        padding: 110px 0 60px 0
+    }
+    .answers__lift {
+        display: none
+    }
+    .answers__title {
+        max-width: 345px
+    }
+    .answers__info {
+        margin-top: 30px
+    }
+}
+
+@media (max-width:429px) {
+    .answers__btn {
+        padding-left: 50px;
+        font-size:16px!important;
+    }
+    .answers__info-content {
+        max-width: calc(100% - 50px);
+        font-size:14px!important;
+    }
+}

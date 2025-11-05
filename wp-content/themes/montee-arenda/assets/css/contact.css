@@ -1,0 +1,134 @@
+.contact {
+  position: relative;
+  padding-bottom: 75px;
+  z-index: 1
+}
+.contact__wrapper {
+  max-width: 870px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid var(--green);
+  border-radius: 20px;
+  padding: 55px 10px 35px 10px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.contact .input.contact__input{
+	height: 60px;
+    border: none;
+    padding-left: 20px;
+    border-radius: 50px;
+}
+
+.contact__title {
+  font-size: 20px!important;
+  text-align: center
+}
+
+.contact__content {
+  margin: 15px 0 0 0;
+  padding-bottom:20px;
+  text-align: center;
+  font-size: 16px
+}
+.contact__content a {
+  text-decoration: underline
+}
+.contact__form {
+  margin-top: 35px;
+  display: flex;
+  max-width: 610px;
+  width: 100%;
+  border: 1px solid var(--green);
+  border-radius: 50px
+}
+.contact__input {
+  flex: 1;
+  padding-right: 10px;
+  padding-left: 20px
+}
+.contact__btn {
+  text-transform: none;
+  flex: 0 1 260px
+}
+.contact__social {
+  margin-top: 25px;
+  flex-wrap: wrap;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.contact__social-btn {
+  background-color: var(--gallery);
+  padding: 4px 8px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease,-webkit-transform .2s ease
+}
+.contact__social-icon {
+  width: 35px;
+  height: 35px
+}
+.contact__social-content {
+  font-weight: 500;
+  font-size: 14px
+}
+
+.contact__form .btn.btn-primary{
+  border-radius: 50px;
+}
+
+
+@media (max-width:767px) {
+    .contact .input.contact__input{
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+  }
+  .contact__form .btn.btn-primary{
+    border-radius: 10px;
+  }
+  .contact {
+    padding-bottom: 10px
+  }
+  .contact__wrapper {
+    padding: 40px 30px 30px 30px
+  }
+  .contact__form {
+    border: none;
+    padding: 0;
+    margin-top: 20px;
+    display: block;
+    max-width: 350px;
+    font-size: 18px
+  }
+  .contact__input {
+    width: 100%;
+	  height:40px!important;
+    padding: 13px 10px;
+    border: 1px solid var(--green);
+    border-radius: 10px;
+    margin-bottom: 10px
+  }
+  .contact__btn {
+    width: 100%
+  }
+}
+
+@media (any-hover:hover) {
+    .contact__content a:hover {
+    color: var(--green)
+  }
+  .contact__social-btn:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+  }
+}
+
