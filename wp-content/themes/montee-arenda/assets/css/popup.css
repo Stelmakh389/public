@@ -219,7 +219,6 @@ display: none;
   width: 100%;
   margin-bottom: 25px;
   display: flex;
-  flex-direction: column-reverse;
 }
 
 .popup .label__text {
@@ -232,8 +231,8 @@ display: none;
 
 .popup input {
   height: 45px;
-  width:192px;
-  font-size: 25px;
+  width:100%;
+  font-size: 20px;
   border: none;
   outline: none;
   border-bottom: 1px solid #cfd0d3;
@@ -381,6 +380,10 @@ cursor: pointer;
   .submit label{
       font-size:14px
   }
+  .popup__checkbox-text{
+    font-size: 12px;
+  }
+}
 
 @media screen and (max-width:650px){
   .quiz{
