@@ -676,7 +676,8 @@ body {
   font-size: 18px;
   font-weight: 500;
   color: #000;
-  -webkit-text-fill-color: #000
+  -webkit-text-fill-color: #000;
+  cursor: pointer;
 }
 .answers__btn::after,
 .answers__btn::before {
@@ -690,16 +691,19 @@ body {
 .answers__btn::before {
   width: 20px;
   height: 2px;
-  left: 0
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .answers__btn::after {
   height: 20px;
   width: 2px;
-  left: 9px
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
 }
-.answers__btn._spoller-active::after {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg)
+details[open] .answers__btn::after {
+  width: 0;
 }
 .answers__info-content {
   padding-top: 20px;
@@ -848,6 +852,20 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
+.answers__spoller {
+    margin-bottom: 10px;
+}
+
+details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+    0%    {opacity: 0; transform: translateY(-10px)}
+    100%  {opacity: 1; transform: translateY(0)}
+}
+
 @media (max-width:1439px) {
   .hero__img-bg--crane {
     width: 610px;
