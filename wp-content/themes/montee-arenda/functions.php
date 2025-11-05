@@ -27,3 +27,14 @@ function montee_arenda_scripts() {
 	wp_enqueue_script( 'telegram-sender', get_template_directory_uri() . '/assets/js/telegram-sender.js', array('app'), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'montee_arenda_scripts' );
+add_filter( 'woocommerce_get_breadcrumb', 'change_breadcrumb_text', 20, 2 );
+
+function change_breadcrumb_text( $crumbs, $breadcrumb ) {
+    foreach ( $crumbs as $key => $crumb ) {
+        if ( $crumb[0] === 'Misc' ) {
+            $crumbs[$key][0] = 'Подъемники';
+        }
+    }
+    return $crumbs;
+}
+

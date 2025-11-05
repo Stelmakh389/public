@@ -49,7 +49,17 @@
 		</form>
 	</div>
 </div>
-
+<div class="messenegers">
+	<a href="https://t.me/montee7990" target="_blank" class="messenegers__item">
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/telegramm.svg" alt="telegramm" class="messenegers__icon">
+	</a>
+	<a href="https://wa.me/79399007990" target="_blank" class="messenegers__item">
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/whatsapp.svg" alt="whatsapp" class="messenegers__icon">
+	</a>
+	<a href="tel:+74954877324" class="messenegers__item">
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/telephone.svg" alt="telephone" class="messenegers__icon">
+	</a>
+</div>
 <?php wp_footer(); ?>
 
 </body>

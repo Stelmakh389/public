@@ -24,7 +24,7 @@
 <?php wp_body_open(); ?>
 <header class="header">
 	<div class="container header__container">
-		<a href="#" class="header__logo">
+		<a href="/" class="header__logo">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" width="180" alt="Монти">
 		</a>
 		<div class="header__messenegers">

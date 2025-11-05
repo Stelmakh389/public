@@ -1,20 +1,21 @@
 <?php
-/**
- * Template Name: Home Page Template
- * Template Post Type: page
- */
 
 get_header();
 ?>
 
 <main>
-
+	<?php
+	global $post;
+	$product = wc_get_product( $post->ID );
+	?>
 	<section class="hero">
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/cube.webp" alt="Cube" class="hero__img-bg hero__img-bg--cube">
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/crane.webp" alt="Cube" class="hero__img-bg hero__img-bg--crane">
 		<div class="container">
-			<h1 class="title title-1 hero__title" contenteditable="false">
-				Аренда подъемников в Москве и МО <span class="" contenteditable="false">в наличии от 1700 руб. / сутки</span>
+			<?php woocommerce_breadcrumb(); ?>
+		</div>
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/cube.webp" alt="Cube" class="hero__img-bg hero__img-bg--cube">
+		<div class="container">
+			<h1 class="title title-1 hero__title">
+				Аренда <?php the_title(); ?> в Москве и МО <span class="">от <?php echo $product->get_price_html(); ?> / сутки</span>
 			</h1>
 			<ul class="list hero__advantages">
 				<li class="hero__advantages-item">
@@ -31,12 +32,10 @@ get_header();
 				</li>
 			</ul>
 			<div class="hero__buttons">
-				<a class="btn btn-primary hero__btn-lift open-popup" contenteditable="false">Подобрать подъемник</a>
-				<a class="btn btn-dashed hero__btn-reviews" contenteditable="false">Посмотреть отзывы</a>
+				<a class="btn btn-primary hero__btn-lift open-popup" contenteditable="false">Рассчитать стоимость</a>
 			</div>
 		</div>
 	</section>
-
 	<div class="ticker">
 		<div class="ticker__wrapper">
 			<span class="ticker__item" contenteditable="false">ДОСТАВКА в день обращения по МОСКВЕ И МО</span>
@@ -51,7 +50,28 @@ get_header();
 
 		</div>
 	</div>
-	
+
+	<section class="product-attributes">
+		<div class="container">
+			<h2 class="title">Характеристики</h2>
+			<?php
+			            global $post;
+			            $product = wc_get_product( $post->ID );			$attributes = $product->get_attributes();
+			if ( ! empty( $attributes ) ) {
+				echo '<table class="product-attributes-table">';
+				foreach ( $attributes as $attribute ) {
+					echo '<tr>';
+					$attribute_name = wc_attribute_label($attribute->get_name());
+					$attribute_value = $product->get_attribute($attribute->get_name());
+					echo '<td>' . $attribute_name . '</td>';
+					echo '<td>' . $attribute_value . '</td>';
+					echo '</tr>';
+				}
+				echo '</table>';
+			}
+			?>
+		</div>
+	</section>
 	<div class="ticker">
 		<div class="ticker__wrapper">
 			<span class="ticker__item" contenteditable="false">ВСЕ В НАЛИЧИИ</span>
@@ -64,7 +84,6 @@ get_header();
 			<span class="ticker__item" contenteditable="false">НОВАЯ ТЕХНИКА</span>
 		</div>
 	</div>
-
 	<section class="answers">
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-shadow.webp" class="answers__bg">
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/lift.webp" alt="Лифт" class="answers__lift">
@@ -174,7 +193,6 @@ get_header();
 			</div>
 		</div>
 	</section>
-
 	<section class="contact" id="contact">
 		<div class="container">
 			<div class="contact__wrapper">
