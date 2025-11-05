@@ -35,7 +35,45 @@
   color: #fff;
   padding: 8px 15px;
   background-color: var(--green);
-  border-radius: 10px
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.product__main {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.product__info {
+  flex: 1 1 55%;
+  max-width: 640px;
+}
+.product__gallery {
+  flex: 1 1 45%;
+  max-width: 520px;
+}
+.product-slider {
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+}
+.product-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  
+}
+.product-slider img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.product-slider .swiper-button-prev,
+.product-slider .swiper-button-next {
+  color: var(--green);
+}
+.product-slider .swiper-pagination-bullet-active {
+  background-color: var(--green);
 }
 .product__advantages {
   margin-top: 40px;
@@ -73,12 +111,14 @@
 .product__btn-lift {
   padding-left: 50px;
   padding-right: 50px;
-  box-shadow: 4px 4px 0 0 var(--green-black)
 }
 .product__btn-lift:focus {
   -webkit-transform: translate(4px,4px);
   transform: translate(4px,4px);
-  box-shadow: none
+}
+.product .woocommerce-Price-amount.amount, .product .woocommerce-Price-currencySymbol{
+    padding-left: 0!important;
+    padding-right: 0!important;
 }
 
 @media (max-width:1439px) {
@@ -94,10 +134,28 @@
   .product__advantages {
     max-width: 780px
   }
+  .product__gallery {
+    max-width: 460px;
+  }
 }
 @media (max-width:992px) {
   .product__img-bg--crane {
     right: -320px
+  }
+  .product__main {
+    flex-direction: column-reverse;
+  }
+  .product__info,
+  .product__gallery,
+  .product__title {
+    max-width: 100%;
+  }
+  .product__gallery {
+    width: 100%;
+    order: -1;
+  }
+  .product-slider .swiper-slide {
+    padding: 10px;
   }
 }
 
@@ -146,7 +204,11 @@
   }
   .product__btn-lift {
     padding: 15px
-  } 
+  }
+  .product-slider .swiper-button-prev,
+  .product-slider .swiper-button-next {
+    display: none;
+  }
 }
 
 @media (any-hover:hover) {
