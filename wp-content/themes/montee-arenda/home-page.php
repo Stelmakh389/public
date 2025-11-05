@@ -113,29 +113,32 @@ get_header();
 													$products_query->the_post();
 													global $product;
 													echo '<li class="catalog__item">';
-													                                                                                if ( has_post_thumbnail() ) {
-													                                                                                    echo get_the_post_thumbnail( get_the_ID(), 'shop_catalog', array( 'class' => 'catalog__img' ) );
-													                                                                                } else {
-													                                                                                    echo '<img src="' . get_template_directory_uri() . '/assets/img/photo.jpg" alt="No Photo" class="catalog__img">';
-													                                                                                }													echo '<h5 class="title catalog__item-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h5>';
-																							$attributes = $product->get_attributes();
-																							if ( ! empty( $attributes ) ) {
-																								echo '<ul class="list catalog__specifications">';
-																								$count = 0;
-																								foreach ( $attributes as $attribute ) {
-																									if ($count < 3) {
-																										                                                                                                                                                                                                                        $attribute_name = wc_attribute_label($attribute->get_name());
-																										                                                                                                                                                                                                                        $attribute_value = $product->get_attribute($attribute->get_name());
-																										                                                                                                                                                                                                                        echo '<li>' . $attribute_name . ': ' . $attribute_value . '</li>';																										$count++;
-																									} else {
-																										break;
-																									}
-																								}
-																								echo '</ul>';
-																							}													echo '<span class="catalog__price">' . $product->get_price_html() . '</span>';
-													echo '<button class="btn btn-primary catalog__item-btn open-popup">Взять в аренду</button>';
-													echo '</li>';
-												}
+														if ( has_post_thumbnail() ) {
+															echo get_the_post_thumbnail( get_the_ID(), 'shop_catalog', array( 'class' => 'catalog__img' ) );
+														} else {
+															echo '<img src="' . get_template_directory_uri() . '/assets/img/photo.jpg" alt="No Photo" class="catalog__img">';
+														}	echo '<h5 class="title catalog__item-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h5>';
+																														$attributes = $product->get_attributes();
+																														if ( ! empty( $attributes ) ) {
+																															echo '<ul class="list catalog__specifications">';
+																															$count = 0;
+																															foreach ( $attributes as $attribute ) {
+																																if ($count < 3) {
+																																	$attribute_name = wc_attribute_label($attribute->get_name());
+																																	$attribute_value = $product->get_attribute($attribute->get_name());
+																																	echo '<li>' . $attribute_name . ': ' . $attribute_value . '</li>';
+																																	$count++;
+																																} else {
+																																	break;
+																																}
+																															}
+																															echo '</ul>';
+																														}
+																														if ( $product->get_price() ) {
+																															echo '<span class="catalog__price">от ' . $product->get_price_html() . ' / сутки</span>';
+																														}
+																														echo '<button class="btn btn-primary catalog__item-btn open-popup">Взять в аренду</button>';
+																														echo '</li>';															}
 												echo '</ul>';
 											}
 											wp_reset_postdata();
@@ -145,7 +148,8 @@ get_header();
 										}
 									}
 									?>
-									</div>		</div>
+									</div>
+								</div>
 	</section>
 	<?php get_template_part( 'template-parts/ticker-2' ); ?>
 

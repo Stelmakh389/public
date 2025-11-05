@@ -18,7 +18,10 @@ if ( ! defined( '_S_VERSION' ) ) {
 function montee_arenda_scripts() {
 	wp_enqueue_style( 'montee-arenda-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/style.css', array(), _S_VERSION );
-	wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/js/app.js', array(), _S_VERSION, true );
+	wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
+
+	wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/js/app.js', array('swiper'), _S_VERSION, true );
 	wp_enqueue_script( 'contact-form', get_template_directory_uri() . '/assets/js/contact-form.js', array('app'), _S_VERSION, true );
 	wp_enqueue_script( 'popup', get_template_directory_uri() . '/assets/js/popup.js', array('app'), _S_VERSION, true );
 	wp_enqueue_script( 'telegram-sender', get_template_directory_uri() . '/assets/js/telegram-sender.js', array('app'), _S_VERSION, true );
